@@ -1,0 +1,664 @@
+:root
+{
+    --hf:70vh;
+    --wf:20vw;
+    --col1:hsl(179, 60%, 60%);
+    --col2:hsl(205, 90%, 70%);
+    --col3:hsl(153, 21%, 64%);
+    --col4:hsl(263, 65%, 58%);
+    --col5:hsl(37, 100%, 56%);
+    --bgcol1: hsl(0,0%,0%);
+    --bgcol2: hsl(0,100%,100%, 0.7);
+    --bgcol3: hsl(0,0%, 55%);
+    --rad:30px;
+    --pad:0.8rem;
+    /* headh/w are temp variables they are not very imp  */
+    --headh:calc(100vh - var(--hf) - 15vh);
+    --headw:100vw;
+    --mt:2vh;
+    --mlog: 4vw;
+    --headhfix:calc(var(--headh) - 2 * var(--pad));
+    --minh-head:6rem;
+
+
+    /* phone variables */
+    --phf:40vh;
+    --phview:calc(100vw - 2 * var(--mlog)  );
+    --phminh-head:3rem;
+    --phcell:80vw;
+    --contheight:calc(100vh - var(--phminh-head) - 2 *  var(--pad) - 2% - calc( var(--phf) - 2 * var(--pad) ));
+}
+
+body
+{
+    /* background-image: radial-gradient(hsl(27, 100%, 61%),hsl(87, 100%, 61%), hsl(147, 100%, 61%), hsl(190, 100%, 20%));*/ 
+    font-size:1rem;
+    overflow-x: hidden ;
+    margin: 0px 0px;
+    
+} 
+
+
+
+
+
+header
+{
+    /* display: block; */
+    width:  calc(var(--headw) - 2 * var(--pad));
+    height: var(--headhfix);
+    /* height: calc(var(--headh) - 2 * var(--pad)); */
+    min-height: var(--minh-head);
+    background-color: var(--bgcol2);
+    
+    /* display: inline-block; */
+    padding: var(--pad);
+    margin-left: var(--mlog);
+    
+    z-index: 3;
+    position: sticky;
+    top: 0;
+    
+}
+header > h1
+{
+    display: flex;
+    align-items: center;
+    position: relative;
+    /* top: 0; */
+    height: var(--headhfix);
+    min-height: var(--minh-head);
+    /* padding-top: 2vh;
+    padding-bottom: 2vh; */
+    font-size:xxx-large;
+    margin-top: 0;
+    margin-bottom: 0;
+    
+    margin-left: 1.4rem;
+    /* margin-top: 0; */
+    float: left;
+    /* font-family: ; */
+
+}
+
+#logo
+{
+    /* display: inline; */
+    float: left;
+    height: inherit;
+    width: var(--headhfix);
+    /* width: calc(var(--headh) - 2 * var(--pad)); */
+    min-width:  var(--minh-head);
+    min-height: var(--minh-head);
+
+    border-radius: 200px;
+    /* margin: var(--mlog); */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url(pics/logo.png);
+    
+}
+
+
+
+
+.baap
+{
+    /* font-size: 1.5rem; */
+    /* display: flex; */
+    display: inline-block;
+    
+    /* column-gap: 3rem; */
+    margin-top: var(--mt);
+
+}
+
+.content
+{
+    width: calc(100vw - var(--wf) - 2rem - 1.6rem - 5rem  );
+    
+    /* flex: 8; */
+    text-align: center;
+    float: left;
+    margin-inline: var(--mlog) var(--mlog);
+    /* border-right: 2px dashed     red; */
+}
+
+
+/* #################ENTER YOUR DETAILS HERE############################ */
+.form
+{
+
+    font-size: 1rem;
+    position: fixed;
+    right: 2vh;
+    /* top: 20vh; */
+    overflow: hidden;
+    width: var(--wf);
+    height: calc(var(--hf) - 2 * var(--pad));
+    padding: var(--pad);        /*make a variable*/
+    border-radius: var(--rad);
+    /* flex: 2.25 ; */
+    float: left;
+    margin-inline: 1rem 1rem;
+    
+}
+
+  
+
+
+
+.dat
+{
+    background-color: var(--col4);
+    background-image: linear-gradient( to bottom right, #3c2760, #723cab, #0756b2, #45f4e3, #0f8974);
+    height: calc(100% - 6 * var(--pad));
+     width: calc(100% - 6 * var(--pad));
+    padding: calc(2 * var(--pad));
+    position: absolute;
+    border-radius: var(--rad);
+}
+
+/* check if th before is positioned properly at the center */
+.dat::before
+{
+    content: "";
+    display: block;
+    position: absolute;
+    top: calc(calc(var(--hf) + var(--pad)) / 2 - calc(150% / 2)); /*padding*/
+    left: calc(calc(var(--wf) + var(--pad)) / 2 - calc(140% / 2));
+    height: 150%;
+    width:140%;
+    /* margin-inline: auto; */
+    
+    /* background-color: antiquewhite; */
+    background-image: conic-gradient(var(--col5) 20deg, transparent 60deg);
+    animation: rot 4s linear 0s infinite ;
+    z-index:-1;
+    border-radius: 20rem;
+}
+
+
+
+.scrl
+{
+    height: 100%;
+    width: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    padding: 0%;
+    margin: 0%;
+
+}
+
+@keyframes rot
+{
+    from
+    {
+        transform: rotate(0deg);
+    }
+    to
+    {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* ############################---------------------######################################## */
+/* **************************ITEMS********************************** */
+
+#itemholder
+{
+    /* display: flex; */
+    /* column-gap: 2vh; */
+    /* justify-content: center; */
+    /* padding: auto; */
+    text-align: center;
+}
+
+.itemrot
+{
+    display: inline-block;
+    /* float: left; */
+    /* margin-inline: auto; */
+    margin: 6vh 6vh 6vh 6vh;
+    position: relative;
+    /* background-color: hsl(220, 80%, 35%); */
+    height:calc(2 * var(--hf) / 4);
+    width: calc(4 * var(--wf) / 3);
+    border-radius: var(--rad);
+    /* padding: calc(var(--pad * 2));   */
+    /* z-index: 0;       */
+    /* backface-visibility: hidden; */
+}
+
+/* 
+.itemrot:hover, 
+.itemrot:focus,
+{
+    display: inline-block;
+   
+    margin: 2vh 2vh 2vh 2vh;
+
+    background-color: hsl(220, 80%, 35%);
+    height:calc(2 * var(--hf) / 3);
+    width: calc(4 * var(--wf) / 5);
+    border-radius: var(--rad);
+    padding: 1rem;    
+    z-index: 0;
+
+    transform: rotateY(180deg);
+    transition: 2s;
+
+}  */
+
+
+.cont
+{
+    transform-style:preserve-3d ;
+    position: absolute;
+    height: inherit;
+    width: inherit;
+    /* padding: inherit; */
+
+    
+    
+    transition: 1.2s;
+    
+}
+
+.cont:hover,
+.cont:focus
+{
+    transform: rotateY(180deg);
+    transition: 1.2s;
+
+}
+
+
+.itemf
+{
+    
+    background-color: blanchedalmond;
+    position: absolute;
+    backface-visibility: hidden;
+    border-radius: var(--rad);
+    height: inherit;
+     width: inherit;
+     /* padding: calc(2 * var(--pad)); */
+    /* background-size: contain; */
+    
+    /* z-index: 1; */
+}
+.itemb
+{
+    backface-visibility: hidden;
+    background-color: blanchedalmond;
+    position: absolute;
+    border-radius: var(--rad);
+     height: calc(100% - 6 * var(--pad));
+      width: calc(100% - 6 * var(--pad));
+    padding: calc(3 * var(--pad));
+    transform: rotateY(180deg);
+    overflow: scroll;
+    font-size: large;
+    text-align: justify;
+    /* white-space: pre-line; */
+    /* z-index: -1; */
+
+}
+
+
+div > h1
+{
+    /* margin-inline: auto; */
+    position: absolute;
+    width: 100%;
+    /* height: 100%; */
+    background-color: var(--bgcol2);
+    
+    bottom: 10%;
+
+}
+
+.content>section
+{
+    font-size:large
+
+}
+
+
+
+
+@media only screen and (max-width:800px)
+{
+    /* .baap>section
+    {
+        background-color: var(--bgcol2);
+        position: sticky;
+        top: calc(var(--phminh-head) + 2 * var(--pad) + 2%);
+    }
+*/
+    
+
+
+    .baap>section
+    {
+        background-color: var(--bgcol2);
+        position: sticky;
+        top: calc(var(--phminh-head) - 2 * var(--pad));
+        height: calc(90vh - var(--phminh-head) - 40vh);
+
+    }
+
+
+
+
+    body
+    {
+        /* background-image: radial-gradient(hsl(27, 100%, 61%),hsl(87, 100%, 61%), hsl(147, 100%, 61%), hsl(190, 100%, 20%));*/ 
+        font-size:1rem;
+        overflow-x: hidden ;
+        margin: 0px 0px;
+        
+    } 
+
+
+
+    
+    header
+    {
+        height: var(--phminh-head);
+        min-height: var(--phminh-head);
+        margin-left: 0;
+        top: 0;
+        left: 0;
+        padding-bottom: 1vh;
+        border-bottom: 3px solid aquamarine;
+        padding-inline: 3vh 2vh;
+    }
+
+
+
+    header > h1
+    {
+        display: flex;
+        align-items: center;
+        position: relative;
+        /* top: 0; */
+        height: var(--phminh-head);
+        min-height: var(--phminh-head);
+        /* padding-top: 2vh;
+        padding-bottom: 2vh; */
+        font-size:6vw;
+        margin-top: 0;
+        margin-bottom: 0;
+        
+        margin-left: 1rem;
+        /* margin-top: 0; */
+        float: left;
+        /* font-family: ; */
+
+    }
+
+    #logo
+    {
+        /* display: inline; */
+        float: left;
+        height: var(--phminh-head);
+        width: var(--phminh-head);
+        /* width: calc(var(--headh) - 2 * var(--pad)); */
+        min-width:  var(--phminh-head);
+        min-height: var(--phminh-head);
+
+        border-radius: 200px;
+        /* margin: var(--mlog); */
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-image: url(pics/logo.png);
+        
+    }
+
+
+
+
+    .baap
+    {
+        /* font-size: 1.5rem; */
+        /* display: flex; */
+        /* display: inline-block; */
+        /* column-gap: 3rem; */
+        margin-top: 0;
+
+    }
+
+    .content
+    {
+        width: var(--phview);
+        
+        height: 40vh;
+        text-align: center;
+        position: sticky;
+        bottom: 0;
+        left: auto;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        /* flex: 8; */
+        /* float: right; */
+        margin-inline: var(--mlog) var(--mlog);
+        margin-top: 2rem;
+        /* border-right: 2px dashed red; */
+        
+    }
+
+
+    /* #################ENTER YOUR DETAILS HERE############################ */
+
+
+    .form
+    {
+
+        /* mq */
+        --phf:40vh;
+        padding: var(--pad);
+        /* padding-top: 0; */
+        /*  */
+        font-size: 1rem;
+        position: sticky;
+        
+        /* left: 6.5vw; */
+        top: calc(var(--phminh-head) - 2 * var(--pad));
+        overflow: hidden;
+        --wf:var(--phview);
+        width: calc(var(--wf) - 1rem);
+        height: calc( var(--phf) - 2 * var(--pad) );
+                /*make a variable*/
+        border-radius: var(--rad);
+        /* flex: 2.25 ; */
+        float: none;
+        /* margin-top: calc(2 * var(--pad)); */
+        margin-inline: auto;
+        
+    }
+    .dat
+    {
+        /* Mq */
+        padding: calc(2 * var(--pad));
+        padding-top: var(--pad);
+        padding-bottom: var(--pad);
+        /* height of dat is reduced by 2 var(--pad) since padding top is made 0 */
+        /*  */
+        background-color: var(--col3);
+        height: calc(100% - 4 * var(--pad));
+        width: calc(100% - 6 * var(--pad));
+        
+        position: absolute;
+        border-radius: var(--rad);
+    }
+
+    /* check if th before is positioned properly at the center */
+    .dat::before
+    {
+        /* lot many changes for mq here */
+        content: "";
+        display: block;
+        position: absolute;
+        top: calc(calc(var(--phf) + var(--pad)) / 2 -  calc(250% / 2)); /*padding*/
+        left: calc(calc(var(--wf) + var(--pad)) / 2 - calc(240% / 2));
+        height: 250%;
+        width:240%;
+        /* margin-inline: auto; */
+        
+        /* background-color: antiquewhite; */
+        /* background-image: conic-gradient(var(--col4) 20deg, transparent 80deg); */
+        animation: rot 4s linear 0s infinite ;
+        z-index:-1;
+        border-radius: 20rem;
+    }
+
+    .scrl
+    {
+        height: 100%;
+        width: 100%;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        padding: 0%;
+        margin: 0%;
+
+    }
+
+    @keyframes rot
+    {
+        from
+        {
+            transform: rotate(0deg);
+        }
+        to
+        {
+            transform: rotate(360deg);
+        }
+    }
+
+
+    /* ############################---------------------######################################## */
+    /* **************************ITEMS********************************** */
+
+    #itemholder
+    {
+        /* display: flex; */
+        /* column-gap: 2vh; */
+        /* justify-content: center; */
+        /* padding: auto; */
+        text-align: center;
+    }
+
+    .itemrot
+    {
+        display: block;
+        /* float: left; */
+        /* margin-inline: auto; */
+        margin-top: 5vh;
+        margin-bottom: 5vh;
+        margin-inline: auto;
+        position: relative;
+        /* background-color: hsl(220, 80%, 35%); */
+        height:calc(2 * var(--hf) / 4);
+        width: var(--phcell);
+        /* width: calc(4 * var(--wf) / 3); */
+        border-radius: var(--rad);
+        /* padding: calc(var(--pad * 2));   */
+        /* z-index: 0;       */
+        /* backface-visibility: hidden; */
+    }
+
+    /* 
+    .itemrot:hover, 
+    .itemrot:focus,
+    {
+        display: inline-block;
+    
+        margin: 2vh 2vh 2vh 2vh;
+
+        background-color: hsl(220, 80%, 35%);
+        height:calc(2 * var(--hf) / 3);
+        width: calc(4 * var(--wf) / 5);
+        border-radius: var(--rad);
+        padding: 1rem;    
+        z-index: 0;
+
+        transform: rotateY(180deg);
+        transition: 2s;
+
+    }  */
+
+
+    .cont
+    {
+        transform-style:preserve-3d ;
+        position: absolute;
+        height: inherit;
+        width: inherit;
+        /* padding: inherit; */
+
+        /* z-index: -4;     */
+        
+        transition: 1.2s;
+        
+    }
+
+    .cont:hover,
+    .cont:active
+    {
+        transform: rotateY(180deg);
+        transition: 1.2s;
+
+    }
+
+
+    .itemf
+    {
+        
+        background-color: blanchedalmond;
+        position: absolute;
+        backface-visibility: hidden;
+        border-radius: var(--rad);
+        height: inherit;
+        width: inherit;
+        /* padding: calc(2 * var(--pad)); */
+        /* background-size: contain; */
+        
+        /* z-index: 1; */
+    }
+    .itemb
+    {
+        backface-visibility: hidden;
+        background-color: blanchedalmond;
+        position: absolute;
+        border-radius: var(--rad);
+        height: calc(100% - 6 * var(--pad));
+        width: calc(100% - 6 * var(--pad));
+        padding: calc(3 * var(--pad));
+        transform: rotateY(180deg);
+        overflow: scroll;
+        font-size: large;
+        text-align: justify;
+        /* white-space: pre-line; */
+        /* z-index: -1; */
+
+    }
+
+
+    div > h1
+    {
+        /* margin-inline: auto; */
+        position: absolute;
+        width: 100%;
+        /* height: 100%; */
+        background-color: var(--bgcol2);
+        
+        bottom: 10%;
+
+    }
+
+
+}

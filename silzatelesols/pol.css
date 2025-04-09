@@ -1,0 +1,52 @@
+
+body
+{
+    font-size: 110%;
+    width:40vw;
+    padding-top: 10vh;
+    margin-inline: auto;
+    text-align: center;
+
+}
+
+h3,p
+{
+    text-align: left;
+}
+
+h2
+{
+    padding-top: 4vh;
+}
+
+#priv
+{
+    align-items: center;
+    width: 80%;
+    height: 125%;
+}
+
+@media (max-width:800px)
+{
+        #hide
+        {
+            display: none;
+        }
+        body
+        {
+            font-size: 100%;
+            width:90vw;
+            padding-top: 7vh;
+            text-align: center;
+        }
+
+        h3,p
+        {
+            text-align: center;
+        }
+
+        h2
+        {
+            padding-top: 4vh;
+        }
+}
